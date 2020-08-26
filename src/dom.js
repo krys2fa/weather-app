@@ -25,8 +25,8 @@ const createPageLayout = () => {
   title.innerHTML = 'Weather App';
   title.classList.add('title', 'flex', 'justify-center');
   main.classList.add('main', 'flex-v', 'justify-center');
-  location.classList.add('location', 'flex');
-  temperature.classList.add('temperature', 'flex', 'pre-animation');
+  location.classList.add('location', 'flex', 'hide');
+  temperature.classList.add('temperature', 'flex', 'hide');
   locationImg.setAttribute('class', 'locationImg');
   locationImg.src = locationImage;
   locationTxt.classList.add('locationTxt');
@@ -57,11 +57,17 @@ const getCity = () => {
   return city;
 };
 
+const displayContent = () => {
+  const location = document.querySelector('.location');
+  const temperature = document.querySelector('.temperature');
+  location.classList.remove( "hide");
+  temperature.classList.remove("hide");
+};
+
 const updateTemperatureDiv = (iconUrl, description, temp) => {
   const temperatureImg = document.querySelector('.temperatureImg');
   const temperatureTxt = document.querySelector('.temperatureTxt');
   const temperatureVal = document.querySelector('.temperatureVal');
-  // const temperature = document.querySelector(".temperature");
   temperatureImg.src = iconUrl;
   temperatureTxt.innerHTML = description;
   temperatureVal.innerHTML = Math.floor(temp);
@@ -76,10 +82,10 @@ const updateWeatherDetails = (data) => {
   const { icon, description } = data.weather[0];
   const { temp } = data.main;
   const { name } = data;
-  console.log('updateWeatherDetails -> name', name);
   const iconUrl = `http://openweathermap.org/img/w/${icon}.png`;
   updateTemperatureDiv(iconUrl, description, temp);
   updateLocationDiv(name);
+  displayContent();
 };
 
 export {

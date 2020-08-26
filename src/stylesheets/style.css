@@ -6,7 +6,7 @@ body {
   box-sizing: border-box;
   height: 100%;
   font-family: 'Montserrat', sans-serif;
-  background-color: blue;
+  background-color: #f3eded;
 }
 
 .flex,
@@ -16,6 +16,10 @@ body {
 
 .flex-v {
   flex-direction: column;
+}
+
+.hide {
+  display: none;
 }
 
 .justify-center {
@@ -41,7 +45,8 @@ form {
 }
 
 .main {
-  background-color: white;
+  /* background-color: white; */
+   background: url('../images/cloudy.jpg');
   width: 600px;
   height: 500px;
   align-self: center;
@@ -53,7 +58,7 @@ form {
   height: 100px;
   width: 260px;
   margin: 20px auto;
-  background-color: white;
+  /* background-color: white; */
 }
 
 .location span {
@@ -66,7 +71,7 @@ form {
   height: 100px;
   width: 300px;
   margin: 20px auto;
-  background-color: white;
+  /* background-color: white; */
   transition: height 300ms ease-in-out;
 }
 
