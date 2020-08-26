@@ -2,6 +2,9 @@
 import { getWeatherDetails } from './index';
 import { form, button } from './form';
 import locationImage from './images/location.png';
+import rainyImage from './images/rainy.jpg';
+import cloudyImage from './images/cloudy.jpg';
+import sunnyImage from './images/sunny.jpg';
 import './stylesheets/style.css';
 
 const addFormListener = () => {
@@ -57,11 +60,28 @@ const getCity = () => {
   return city;
 };
 
-const displayContent = () => {
+const changeBackground = (icon) => {
+  const main = document.querySelector('.main');
+  switch (icon) {
+    case '01n':
+      main.setAttribute('style', `background-image: url(${sunnyImage})`);
+      break;
+
+    case '10d':
+      main.setAttribute('style', `background-image: url(${rainyImage})`);
+      break;
+
+    default:
+      main.setAttribute('style', `background-image: url(${cloudyImage});`);
+  }
+};
+
+const displayContent = (icon) => {
   const location = document.querySelector('.location');
   const temperature = document.querySelector('.temperature');
-  location.classList.remove( "hide");
-  temperature.classList.remove("hide");
+  location.classList.remove('hide');
+  temperature.classList.remove('hide');
+  changeBackground(icon);
 };
 
 const updateTemperatureDiv = (iconUrl, description, temp) => {
@@ -70,7 +90,8 @@ const updateTemperatureDiv = (iconUrl, description, temp) => {
   const temperatureVal = document.querySelector('.temperatureVal');
   temperatureImg.src = iconUrl;
   temperatureTxt.innerHTML = description;
-  temperatureVal.innerHTML = Math.floor(temp);
+  temperatureVal.innerHTML = `${Math.floor(temp)} °C`;
+  // °F
 };
 
 const updateLocationDiv = (name) => {
@@ -79,13 +100,14 @@ const updateLocationDiv = (name) => {
 };
 
 const updateWeatherDetails = (data) => {
-  const { icon, description } = data.weather[0];
-  const { temp } = data.main;
-  const { name } = data;
+  const {
+    name, temp, icon, description,
+  } = data;
+
   const iconUrl = `http://openweathermap.org/img/w/${icon}.png`;
   updateTemperatureDiv(iconUrl, description, temp);
   updateLocationDiv(name);
-  displayContent();
+  displayContent(icon);
 };
 
 export {

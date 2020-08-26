@@ -27,7 +27,7 @@ body {
 }
 
 .title {
- font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 input {
@@ -41,12 +41,12 @@ form {
   justify-content: center;
   align-items: center;
   height: 40px;
-  margin: 0px auto;
+  margin: 0 auto;
 }
 
 .main {
   /* background-color: white; */
-   background: url('../images/cloudy.jpg');
+  background: url('../images/cloudy.jpg');
   width: 600px;
   height: 500px;
   align-self: center;
@@ -58,6 +58,7 @@ form {
   height: 100px;
   width: 260px;
   margin: 20px auto;
+
   /* background-color: white; */
 }
 
@@ -71,6 +72,7 @@ form {
   height: 100px;
   width: 300px;
   margin: 20px auto;
+
   /* background-color: white; */
   transition: height 300ms ease-in-out;
 }
