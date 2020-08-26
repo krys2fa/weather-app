@@ -1,0 +1,19 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "This is a weather forecast site built using a weather API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krys2fa/weather-app.git"
+  },
+  "author": "krys2fa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/krys2fa/weather-app/issues"
+  },
+  "homepage": "https://github.com/krys2fa/weather-app#readme"
+}
