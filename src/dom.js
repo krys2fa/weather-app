@@ -1,5 +1,4 @@
-/* eslint-disable import/no-cycle */
-// eslint-disable-next-line import/named
+// eslint-disable-next-line import/no-cycle
 import { getWeatherDetails } from './index';
 import { form, button } from './form';
 import locationImage from './images/location.png';
@@ -69,13 +68,15 @@ const updateTemperatureDiv = (iconUrl, description, temp) => {
 };
 
 const updateLocationDiv = (name) => {
-  locationTxt.innerHTML = name
+  const locationTxt = document.querySelector('.locationTxt');
+  locationTxt.innerHTML = name;
 };
 
 const updateWeatherDetails = (data) => {
   const { icon, description } = data.weather[0];
-  const { name, temp } = data.main;
-  // console.log('updateWeatherDetails -> temp', temp);
+  const { temp } = data.main;
+  const { name } = data;
+  console.log('updateWeatherDetails -> name', name);
   const iconUrl = `http://openweathermap.org/img/w/${icon}.png`;
   updateTemperatureDiv(iconUrl, description, temp);
   updateLocationDiv(name);

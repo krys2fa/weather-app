@@ -41,7 +41,7 @@ form {
 }
 
 .main {
-  background-color: red;
+  background-color: white;
   width: 600px;
   height: 500px;
   align-self: center;
@@ -82,8 +82,8 @@ form {
 }
 
 .locationImg {
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 60px;
   margin: 10px;
 }
 

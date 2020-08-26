@@ -37,4 +37,4 @@ const getWeatherDetails = async (event) => {
 
 addFormListener();
 
-export default { getWeatherDetails };
+export { getWeatherDetails };

@@ -59,7 +59,7 @@ Kindly give this repository a ⭐️ if you like this project!
 
 - [The OpenWeatherMap API](https://openweathermap.org/current)
 
-- [Design inspiration]() was taken from .
+- [Design inspiration](https://www.behance.net/gallery/101649625/Weather-App?tracking_source=search_projects_recommended%7Cweather%20web%20applications) was taken from K Shweta Kumari .
 
 - Images were downloaded from searches on [Google](https://www.google.com).
 
