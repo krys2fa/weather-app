@@ -4,7 +4,9 @@
   "description": "This is a weather forecast site built using a weather API.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "",
+    "build": "",
+    "start": ""
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/krys2fa/weather-app/issues"
   },
-  "homepage": "https://github.com/krys2fa/weather-app#readme"
+  "homepage": "https://github.com/krys2fa/weather-app#readme",
+  "devDependencies": {
+    "webpack": "4.44.1",
+    "webpack-cli": "3.3.12"
+  }
 }
