@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  background-color: blue;
+}
+
+.flex,
+.flex-v {
+  display: flex;
+}
+
+.flex-v {
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.title {
+
+}
+
+input {
+  border-radius: 5px;
+  padding: 10px;
+}
+
+form {
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  margin: 0px auto;
+}
+
+.main {
+  background-color: red;
+  width: 600px;
+  height: 500px;
+  align-self: center;
+  justify-self: center;
+  margin: 50px auto;
+}
+
+/* .btn {
+  background-color: #f15631;
+  border-radius: 20px;
+  font-size: 16px;
+  margin-left: 20px;
+  font-family: 'Poppins', sans-serif;
+} */
+
+.location {
+  height: 60px;
+  width: 200px;
+  margin: 20px auto;
+  background-color: black;
+}
+
+.temperature {
+  height: 100px;
+  width: 200px;
+  margin: 20px auto;
+  background-color: brown;
+}
+
+.toggle {
+  margin: 20px auto;
+  padding: 10px 30px;
+}
