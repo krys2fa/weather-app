@@ -3,15 +3,14 @@ const inputField = (labelName, fieldType) => {
   input.setAttribute('name', labelName);
   input.setAttribute('type', fieldType);
   input.setAttribute('placeholder', labelName);
-  input.setAttribute('minLength', 3);
   input.required = true;
   return input;
 };
 
-const button = () => {
+const button = (value) => {
   const btn = document.createElement('input');
   btn.setAttribute('type', 'submit');
-  btn.setAttribute('value', 'Search');
+  btn.setAttribute('value', value);
   btn.classList.add('btn');
   return btn;
 };
@@ -21,7 +20,7 @@ const form = () => {
   const formDiv = document.createElement('form');
 
   formDiv.appendChild(searchInput);
-  formDiv.appendChild(button());
+  formDiv.appendChild(button('Search'));
 
   return formDiv;
 };

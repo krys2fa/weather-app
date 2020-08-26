@@ -1,43 +1,40 @@
-// adeafcceaf56c1e887e03f6075f5cc81;
+/* eslint-disable import/no-cycle */
+import {
+  createPageLayout, addFormListener, getCity, updateWeatherDetails,
+} from './dom';
 
+const baseUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
+const apiKey = 'adeafcceaf56c1e887e03f6075f5cc81';
 
-// api.openweathermap.org/data/2.5/weather?q={city name}&appid=
+createPageLayout();
 
-// api.openweathermap.org/data/2.5/weather?q=accra&appid=adeafcceaf56c1e887e03f6075f5cc81
+const getWeatherDetails = async (event) => {
+  event.preventDefault();
+  const city = getCity().value;
+  console.log('getWeatherDetails -> city', city);
 
+  try {
+    const response = await fetch(`${baseUrl}${city}&appid=${apiKey}`, {
+      mode: 'cors',
+    });
+    console.log('asyncgetWeatherDetails -> result', response);
+    const data = await response.json();
+    updateWeatherDetails(data);
+    // console.log('getWeatherDetails -> data', data);
+    // // const [, , description, icon ] = data.weather[0];
+    // const { icon, description } = data.weather[0];
+    // // console.log('getWeatherDetails -> data.weather', data.weather);
+    // console.log('getWeatherDetails -> iconCode', icon);
+    // // const [description] = data.weather['description'];
+    // console.log('getWeatherDetails -> description', description);
+    // const { temp } = data.main;
+    // console.log('getWeatherDetails -> temp', temp);
+  } catch (error) {
+    console.log('getWeatherDetails -> error', error);
+  }
+  // console.log('getWeatherDetails -> event', event);
+};
 
-import { form, button } from './form';
-import './stylesheets/style.css';
+addFormListener();
 
-const main = document.createElement('div');
-const title = document.createElement('h1');
-const location = document.createElement('div');
-const locationImg = document.createElement('img');
-const locationTxt = document.createElement('p');
-const temperature = document.createElement("div");
-const temperatureImg = document.createElement("img");
-const temperatureTxt = document.createElement("p");
-const btn = button();
-
-title.innerHTML = 'Weather App';
-title.classList.add('title', 'flex', 'justify-center');
-main.classList.add('main', 'flex-v', 'justify-center');
-location.classList.add('location');
-temperature.classList.add("temperature");
-locationImg.src = '';
-temperatureImg.src = "";
-btn.setAttribute('value', 'C -> F');
-btn.classList.remove("btn");
-btn.classList.add("toggle");
-
-location.appendChild(locationImg);
-location.appendChild(locationTxt);
-temperature.appendChild(temperatureImg);
-temperature.appendChild(temperatureTxt);
-main.appendChild(form());
-main.appendChild(location);
-main.appendChild(temperature);
-main.appendChild(btn);
-
-document.body.appendChild(title);
-document.body.appendChild(main);
+export default { getWeatherDetails };

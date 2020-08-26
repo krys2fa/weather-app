@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap');
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   height: 100%;
+  font-family: 'Montserrat', sans-serif;
   background-color: blue;
 }
 
@@ -20,12 +23,14 @@ body {
 }
 
 .title {
-
+ font-family: 'Montserrat', sans-serif;
 }
 
 input {
   border-radius: 5px;
   padding: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
 }
 
 form {
@@ -44,29 +49,51 @@ form {
   margin: 50px auto;
 }
 
-/* .btn {
-  background-color: #f15631;
-  border-radius: 20px;
-  font-size: 16px;
-  margin-left: 20px;
-  font-family: 'Poppins', sans-serif;
-} */
-
 .location {
-  height: 60px;
-  width: 200px;
+  height: 100px;
+  width: 260px;
   margin: 20px auto;
-  background-color: black;
+  background-color: white;
+}
+
+.location span {
+  margin: 20px;
+  font-weight: 300;
+  font-size: 25px;
 }
 
 .temperature {
   height: 100px;
-  width: 200px;
+  width: 300px;
   margin: 20px auto;
-  background-color: brown;
+  background-color: white;
+  transition: height 300ms ease-in-out;
 }
 
 .toggle {
   margin: 20px auto;
   padding: 10px 30px;
+}
+
+.temperatureImg,
+.locationImg {
+  width: 100px;
+  height: 100px;
+}
+
+.locationImg {
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+}
+
+.temperatureTxt {
+  font-size: 16px;
+  margin: 10px 20px;
+}
+
+.temperatureVal {
+  margin: 10px auto;
+  font-size: 30px;
+  font-weight: 700;
 }
