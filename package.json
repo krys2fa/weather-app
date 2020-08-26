@@ -4,7 +4,7 @@
   "description": "This is a weather forecast site built using a weather API.",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development",
+    "dev": "webpack --config webpack.config.js --watch --mode development",
     "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development --open"
   },
