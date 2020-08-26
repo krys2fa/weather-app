@@ -18,7 +18,7 @@ Requirements can be seen from [The Odin Curriculum](https://www.theodinproject.c
 
 ## Live Demo
 
-Click [here]() to visit a live version of the web app.
+Click [here](https://raw.githack.com/krys2fa/weather-app/weather-app/dist/index.html) to visit a live version of the web app.
 
 ## Getting Started
 
