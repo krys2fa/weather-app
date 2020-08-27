@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-cycle
-import { getWeatherDetails } from './index';
+import { getWeatherDetails, temperatureSymbol } from './index';
 import { form, button } from './form';
 import locationImage from './images/location.png';
 import rainyImage from './images/rainy.jpg';
@@ -88,8 +88,6 @@ const displayContent = (icon) => {
   temperature.classList.remove('hide');
   changeBackground(icon);
 };
-
-const temperatureSymbol = (units) => (units === 'metric' ? '°C' : '°F');
 
 const updateTemperatureDiv = (iconUrl, description, temp, units) => {
   const temperatureImg = document.querySelector('.temperatureImg');
