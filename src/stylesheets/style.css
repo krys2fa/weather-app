@@ -45,21 +45,19 @@ form {
 }
 
 .main {
-  /* background-color: white; */
-  background: url('../images/cloudy.jpg');
+  background-color: #fff;
   width: 600px;
   height: 500px;
   align-self: center;
   justify-self: center;
   margin: 50px auto;
+  border-radius: 10px;
 }
 
 .location {
   height: 100px;
   width: 260px;
   margin: 20px auto;
-
-  /* background-color: white; */
 }
 
 .location span {
@@ -72,9 +70,6 @@ form {
   height: 100px;
   width: 300px;
   margin: 20px auto;
-
-  /* background-color: white; */
-  transition: height 300ms ease-in-out;
 }
 
 .toggle {

@@ -8,8 +8,13 @@ import sunnyImage from './images/sunny.jpg';
 import './stylesheets/style.css';
 
 const addFormListener = () => {
-  const searchBtn = document.querySelector('.btn');
-  searchBtn.addEventListener('click', getWeatherDetails);
+  const form = document.querySelector('form');
+  form.addEventListener('submit', getWeatherDetails);
+};
+
+const addBtnListener = () => {
+  const btn = document.querySelector('.toggle');
+  btn.addEventListener('click', getWeatherDetails);
 };
 
 const createPageLayout = () => {
@@ -23,7 +28,7 @@ const createPageLayout = () => {
   const temperatureTxt = document.createElement('span');
   const temperatureVal = document.createElement('span');
   const temperatureDiv = document.createElement('div');
-  const toggleBtn = button('C -> F');
+  const toggleBtn = button('°C <-> °F');
 
   title.innerHTML = 'Weather App';
   title.classList.add('title', 'flex', 'justify-center');
@@ -84,14 +89,15 @@ const displayContent = (icon) => {
   changeBackground(icon);
 };
 
-const updateTemperatureDiv = (iconUrl, description, temp) => {
+const temperatureSymbol = (units) => (units === 'metric' ? '°C' : '°F');
+
+const updateTemperatureDiv = (iconUrl, description, temp, units) => {
   const temperatureImg = document.querySelector('.temperatureImg');
   const temperatureTxt = document.querySelector('.temperatureTxt');
   const temperatureVal = document.querySelector('.temperatureVal');
   temperatureImg.src = iconUrl;
   temperatureTxt.innerHTML = description;
-  temperatureVal.innerHTML = `${Math.floor(temp)} °C`;
-  // °F
+  temperatureVal.innerHTML = `${Math.floor(temp)} ${temperatureSymbol(units)}`;
 };
 
 const updateLocationDiv = (name) => {
@@ -99,17 +105,21 @@ const updateLocationDiv = (name) => {
   locationTxt.innerHTML = name;
 };
 
-const updateWeatherDetails = (data) => {
+const updateWeatherDetails = (data, units) => {
   const {
     name, temp, icon, description,
   } = data;
 
   const iconUrl = `http://openweathermap.org/img/w/${icon}.png`;
-  updateTemperatureDiv(iconUrl, description, temp);
+  updateTemperatureDiv(iconUrl, description, temp, units);
   updateLocationDiv(name);
   displayContent(icon);
 };
 
 export {
-  createPageLayout, addFormListener, getCity, updateWeatherDetails,
+  createPageLayout,
+  addFormListener,
+  addBtnListener,
+  getCity,
+  updateWeatherDetails,
 };
