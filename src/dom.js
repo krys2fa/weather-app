@@ -112,9 +112,9 @@ const updateExtrasDiv = (pressure, humidity, wind) => {
   const pressureSpan = document.querySelector('.pressure');
   const humiditySpan = document.querySelector('.humidity');
   const windSpan = document.querySelector('.wind');
-  pressureSpan.innerHTML = `Pressure: ${pressure}`;
-  humiditySpan.innerHTML = `Humidity: ${humidity}`;
-  windSpan.innerHTML = `Wind Speed: ${wind.speed}`;
+  pressureSpan.innerHTML = `Pressure: ${pressure} Pa`;
+  humiditySpan.innerHTML = `Humidity: ${humidity} kg/m3`;
+  windSpan.innerHTML = `Wind Speed: ${wind.speed} knots`;
 };
 
 const updateTemperatureDiv = (iconUrl, description, temp, units) => {
