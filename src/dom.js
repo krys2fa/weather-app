@@ -47,7 +47,7 @@ const createPageLayout = () => {
   temperatureDiv.classList.add('flex-v');
   temperatureImg.classList.add('temperatureImg');
   toggleBtn.classList.remove('btn');
-  toggleBtn.classList.add('toggle');
+  toggleBtn.classList.add('toggle', 'hide');
   extras.classList.add('flex', 'extras');
   pressure.classList.add('pressure', 'padding');
   humidity.classList.add('humidity', 'padding');
@@ -101,8 +101,10 @@ const changeBackground = (icon) => {
 const displayContent = (icon) => {
   const location = document.querySelector('.location');
   const temperature = document.querySelector('.temperature');
+  const toggle = document.querySelector('.toggle');
   location.classList.remove('hide');
   temperature.classList.remove('hide');
+  toggle.classList.remove('hide');
   changeBackground(icon);
 };
 
