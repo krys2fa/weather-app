@@ -6,6 +6,8 @@ import {
   addBtnListener,
   getCity,
   updateWeatherDetails,
+  displayError,
+  clearErrors,
 } from './dom';
 
 let currentUnit = 'metric';
@@ -38,12 +40,12 @@ const getWeatherDetails = async (event) => {
       mode: 'cors',
     });
     const data = await response.json();
-    console.log('getWeatherDetails -> data', data);
     const result = processData(data);
     currentUnit = units;
+    clearErrors();
     updateWeatherDetails(result, units);
   } catch (error) {
-    alert(error);
+    displayError(error);
   }
 };
 

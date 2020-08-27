@@ -28,6 +28,7 @@ const createPageLayout = () => {
   const temperatureTxt = document.createElement('span');
   const temperatureVal = document.createElement('span');
   const temperatureDiv = document.createElement('div');
+  const errorDiv = document.createElement('div');
   const extras = document.createElement('div');
   const pressure = document.createElement('div');
   const humidity = document.createElement('div');
@@ -49,6 +50,7 @@ const createPageLayout = () => {
   toggleBtn.classList.remove('btn');
   toggleBtn.classList.add('toggle', 'hide');
   extras.classList.add('flex', 'extras');
+  errorDiv.classList.add('error');
   pressure.classList.add('pressure', 'padding');
   humidity.classList.add('humidity', 'padding');
   wind.classList.add('wind', 'padding');
@@ -67,6 +69,7 @@ const createPageLayout = () => {
   main.appendChild(temperature);
   main.appendChild(toggleBtn);
   main.appendChild(extras);
+  main.appendChild(errorDiv);
 
 
   document.body.appendChild(title);
@@ -143,10 +146,22 @@ const updateWeatherDetails = (data, units) => {
   displayContent(icon);
 };
 
+const displayError = (error) => {
+  const errorDiv = document.querySelector('.error');
+  errorDiv.innerHTML = error;
+};
+
+const clearErrors = () => {
+  const errorDiv = document.querySelector('.error');
+  errorDiv.innerHTML = '';
+};
+
 export {
   createPageLayout,
   addFormListener,
   addBtnListener,
   getCity,
   updateWeatherDetails,
+  displayError,
+  clearErrors,
 };
