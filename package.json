@@ -1,0 +1,36 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "This is a weather forecast site built using a weather API.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krys2fa/weather-app.git"
+  },
+  "author": "krys2fa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/krys2fa/weather-app/issues"
+  },
+  "homepage": "https://github.com/krys2fa/weather-app#readme",
+  "devDependencies": {
+    "css-loader": "4.2.2",
+    "eslint": "6.8.0",
+    "eslint-config-airbnb-base": "14.1.0",
+    "eslint-plugin-import": "2.20.2",
+    "file-loader": "6.0.0",
+    "style-loader": "1.2.1",
+    "stylelint": "13.3.3",
+    "stylelint-config-standard": "20.0.0",
+    "stylelint-csstree-validator": "1.8.0",
+    "stylelint-scss": "3.17.2",
+    "webpack": "4.44.1",
+    "webpack-cli": "3.3.12",
+    "webpack-dev-server": "3.11.0"
+  }
+}

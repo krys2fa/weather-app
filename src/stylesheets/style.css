@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  background: url('../images/cloudy.jpg') fixed center no-repeat;
+  background-size: cover;
+}
+
+.flex,
+.flex-v {
+  display: flex;
+}
+
+.flex-v {
+  flex-direction: column;
+}
+
+.hide {
+  display: none;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.padding {
+  padding: 0 15px;
+}
+
+.extras {
+  margin: 5px auto;
+  font-weight: 700;
+}
+
+.title {
+  font-family: 'Montserrat', sans-serif;
+}
+
+input {
+  border-radius: 5px;
+  padding: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+form {
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  margin: 0 auto;
+}
+
+.main {
+  width: 600px;
+  height: 500px;
+  align-self: center;
+  justify-self: center;
+  margin: 50px auto;
+  border-radius: 10px;
+}
+
+.location {
+  height: 100px;
+  width: 260px;
+  margin: 20px auto;
+}
+
+.location span {
+  margin: 20px;
+  font-weight: 300;
+  font-size: 25px;
+}
+
+.temperature {
+  height: 100px;
+  width: 300px;
+  margin: 20px auto;
+}
+
+.toggle {
+  margin: 20px auto;
+  padding: 10px 30px;
+}
+
+.temperatureImg,
+.locationImg {
+  width: 100px;
+  height: 100px;
+}
+
+.locationImg {
+  width: 50px;
+  height: 60px;
+  margin: 10px;
+}
+
+.temperatureTxt {
+  font-size: 16px;
+  margin: 10px 20px;
+}
+
+.temperatureVal {
+  margin: 10px auto;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.error {
+  margin: 10px auto;
+}
