@@ -26,6 +26,15 @@ body {
   justify-content: center;
 }
 
+.padding {
+  padding: 0 20px;
+}
+
+.extras {
+  margin: 5px auto;
+  font-weight: 700;
+}
+
 .title {
   font-family: 'Montserrat', sans-serif;
 }

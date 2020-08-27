@@ -20,10 +20,10 @@ const getPreferredUnits = (event, currentUnit) => (event.type === 'click' ? togg
 
 const processData = (data) => {
   const { icon, description } = data.weather[0];
-  const { temp } = data.main;
-  const { name } = data;
+  const { temp, humidity, pressure } = data.main;
+  const { name, wind, sys } = data;
   const dataObject = {
-    name, temp, icon, description,
+    name, temp, icon, description, pressure, humidity, wind, sys,
   };
   return dataObject;
 };

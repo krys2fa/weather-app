@@ -28,6 +28,10 @@ const createPageLayout = () => {
   const temperatureTxt = document.createElement('span');
   const temperatureVal = document.createElement('span');
   const temperatureDiv = document.createElement('div');
+  const extras = document.createElement('div');
+  const pressure = document.createElement('div');
+  const humidity = document.createElement('div');
+  const wind = document.createElement('div');
   const toggleBtn = button('°C <-> °F');
 
   title.innerHTML = 'Weather App';
@@ -44,6 +48,10 @@ const createPageLayout = () => {
   temperatureImg.classList.add('temperatureImg');
   toggleBtn.classList.remove('btn');
   toggleBtn.classList.add('toggle');
+  extras.classList.add('flex', 'extras');
+  pressure.classList.add('pressure', 'padding');
+  humidity.classList.add('humidity', 'padding');
+  wind.classList.add('wind', 'padding');
 
   location.appendChild(locationImg);
   location.appendChild(locationTxt);
@@ -51,10 +59,15 @@ const createPageLayout = () => {
   temperatureDiv.appendChild(temperatureVal);
   temperatureDiv.appendChild(temperatureTxt);
   temperature.appendChild(temperatureDiv);
+  extras.appendChild(pressure);
+  extras.appendChild(humidity);
+  extras.appendChild(wind);
   main.appendChild(form());
   main.appendChild(location);
   main.appendChild(temperature);
   main.appendChild(toggleBtn);
+  main.appendChild(extras);
+
 
   document.body.appendChild(title);
   document.body.appendChild(main);
@@ -89,6 +102,15 @@ const displayContent = (icon) => {
   changeBackground(icon);
 };
 
+const updateExtrasDiv = (pressure, humidity, wind) => {
+  const pressureSpan = document.querySelector('.pressure');
+  const humiditySpan = document.querySelector('.humidity');
+  const windSpan = document.querySelector('.wind');
+  pressureSpan.innerHTML = `Pressure: ${pressure}`;
+  humiditySpan.innerHTML = `Humidity: ${humidity}`;
+  windSpan.innerHTML = `Wind Speed: ${wind.speed}`;
+};
+
 const updateTemperatureDiv = (iconUrl, description, temp, units) => {
   const temperatureImg = document.querySelector('.temperatureImg');
   const temperatureTxt = document.querySelector('.temperatureTxt');
@@ -98,19 +120,20 @@ const updateTemperatureDiv = (iconUrl, description, temp, units) => {
   temperatureVal.innerHTML = `${Math.floor(temp)} ${temperatureSymbol(units)}`;
 };
 
-const updateLocationDiv = (name) => {
+const updateLocationDiv = (name, sys) => {
   const locationTxt = document.querySelector('.locationTxt');
-  locationTxt.innerHTML = name;
+  locationTxt.innerHTML = `${name}, ${sys.country}`;
 };
 
 const updateWeatherDetails = (data, units) => {
   const {
-    name, temp, icon, description,
+    name, temp, icon, description, pressure, humidity, wind, sys,
   } = data;
 
   const iconUrl = `http://openweathermap.org/img/w/${icon}.png`;
   updateTemperatureDiv(iconUrl, description, temp, units);
-  updateLocationDiv(name);
+  updateExtrasDiv(pressure, humidity, wind);
+  updateLocationDiv(name, sys);
   displayContent(icon);
 };
 
