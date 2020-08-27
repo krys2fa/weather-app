@@ -81,10 +81,14 @@ const getCity = () => {
 const changeBackground = (icon) => {
   const main = document.querySelector('.main');
   switch (icon) {
+    case '01d':
+    case '04n':
     case '01n':
       main.setAttribute('style', `background-image: url(${sunnyImage})`);
       break;
 
+    case '09d':
+    case '09n':
     case '10d':
       main.setAttribute('style', `background-image: url(${rainyImage})`);
       break;

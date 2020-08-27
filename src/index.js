@@ -38,6 +38,7 @@ const getWeatherDetails = async (event) => {
       mode: 'cors',
     });
     const data = await response.json();
+    console.log('getWeatherDetails -> data', data);
     const result = processData(data);
     currentUnit = units;
     updateWeatherDetails(result, units);
