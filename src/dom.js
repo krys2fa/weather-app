@@ -79,22 +79,22 @@ const getCity = () => {
 };
 
 const changeBackground = (icon) => {
-  const main = document.querySelector('.main');
+  const main = document.querySelector('body');
   switch (icon) {
     case '01d':
-    case '04n':
     case '01n':
-      main.setAttribute('style', `background-image: url(${sunnyImage})`);
+      main.setAttribute('style', `background: url(${sunnyImage}) fixed center no-repeat;background-size: cover`);
       break;
 
     case '09d':
     case '09n':
     case '10d':
-      main.setAttribute('style', `background-image: url(${rainyImage})`);
+    case '10n':
+      main.setAttribute('style', `background: url(${rainyImage}) fixed center no-repeat;background-size: cover`);
       break;
 
     default:
-      main.setAttribute('style', `background-image: url(${cloudyImage});`);
+      main.setAttribute('style', `background: url(${cloudyImage}) fixed center no-repeat;background-size: cover`);
   }
 };
 

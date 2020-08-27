@@ -6,7 +6,8 @@ body {
   box-sizing: border-box;
   height: 100%;
   font-family: 'Montserrat', sans-serif;
-  background-color: #f3eded;
+  background: url('../images/cloudy.jpg') fixed center no-repeat;
+  background-size: cover;
 }
 
 .flex,
@@ -54,7 +55,6 @@ form {
 }
 
 .main {
-  background-color: #fff;
   width: 600px;
   height: 500px;
   align-self: center;
