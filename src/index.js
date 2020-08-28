@@ -17,6 +17,7 @@ const apiKey = 'adeafcceaf56c1e887e03f6075f5cc81';
 createPageLayout();
 
 const temperatureSymbol = (units) => (units === 'metric' ? '°C' : '°F');
+const windSpeedSymbol = (units) => (units === 'metric' ? 'm/s' : 'mph');
 const toggleUnit = (currentUnit) => (currentUnit === 'metric' ? 'imperial' : 'metric');
 const getPreferredUnits = (event, currentUnit) => (event.type === 'click' ? toggleUnit(currentUnit) : 'metric');
 
@@ -52,4 +53,4 @@ const getWeatherDetails = async (event) => {
 addFormListener();
 addBtnListener();
 
-export { getWeatherDetails, temperatureSymbol };
+export { getWeatherDetails, temperatureSymbol, windSpeedSymbol };
