@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-cycle
-import { getWeatherDetails, temperatureSymbol } from './index';
+import { getWeatherDetails, temperatureSymbol, windSpeedSymbol } from './index';
 import { form, button } from './form';
 import locationImage from './images/location.png';
 import rainyImage from './images/rainy.jpg';
@@ -111,13 +111,13 @@ const displayContent = (icon) => {
   changeBackground(icon);
 };
 
-const updateExtrasDiv = (pressure, humidity, wind) => {
+const updateExtrasDiv = (pressure, humidity, wind, units) => {
   const pressureSpan = document.querySelector('.pressure');
   const humiditySpan = document.querySelector('.humidity');
   const windSpan = document.querySelector('.wind');
-  pressureSpan.innerHTML = `Pressure: ${pressure} Pa`;
-  humiditySpan.innerHTML = `Humidity: ${humidity} kg/m3`;
-  windSpan.innerHTML = `Wind Speed: ${wind.speed} knots`;
+  pressureSpan.innerHTML = `Pressure: ${pressure} hPa`;
+  humiditySpan.innerHTML = `Humidity: ${humidity} %`;
+  windSpan.innerHTML = `Wind Speed: ${wind.speed} ${windSpeedSymbol(units)}`;
 };
 
 const updateTemperatureDiv = (iconUrl, description, temp, units) => {
@@ -141,7 +141,7 @@ const updateWeatherDetails = (data, units) => {
 
   const iconUrl = `http://openweathermap.org/img/w/${icon}.png`;
   updateTemperatureDiv(iconUrl, description, temp, units);
-  updateExtrasDiv(pressure, humidity, wind);
+  updateExtrasDiv(pressure, humidity, wind, units);
   updateLocationDiv(name, sys);
   displayContent(icon);
 };
