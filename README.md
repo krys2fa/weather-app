@@ -5,15 +5,10 @@ Requirements can be seen from [The Odin Curriculum](https://www.theodinproject.c
 
 ## Web App Screenshots
 
-| Cloudy       | Rainy    | Sunny    |
-| :------------- | :----------: | -----------: |
+|      Cloudy                  |            Rainy             |               Sunny            |
+| :--------------------------- | :--------------------------: | -----------------------------: |
 | ![](./src/images/cloudy.png) | ![](./src/images/rainy.png)  | ![](./src/images/sunny.png)    |
-####
-![](./src/images/cloudy.png)
-####
-![](./src/images/rainy.png)
-####
-![](./src/images/sunny.png)
+
 
 ## Built With
 
